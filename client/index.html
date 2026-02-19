@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoshlar Ishlari Agentligi | Termiz shahar bo'limi</title>
+  <style>
+    #loader-init {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+
+    .loading-logo-wrapper {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .loading-logo-wrapper::before {
+      content: "";
+      width: 80px;
+      height: 80px;
+      background-image: url('/Logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-spinner {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border: 2px solid #1E3A8A;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      color: #1E3A8A;
+      letter-spacing: 0.4em;
+      animation: pulse-text 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: scale(0.95);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse-text {
+
+      0%,
+      100% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="loader-init">
+      <div class="loading-logo-wrapper">
+        <div class="loading-spinner"></div>
+      </div>
+      <div class="loading-text">YUKLANMOQDA...</div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

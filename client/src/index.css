@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --color-primary: #1E3A8A;
+  --color-primary-light: #2563EB;
+  --color-secondary: #64748B;
+  --color-accent: #EAB308;
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg-page: #FFFFFF;
+  --bg-card: #FFFFFF;
+}
+
+body {
+  @apply bg-[--bg-page] text-gray-800 antialiased overflow-x-hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Accessibility Modes */
+.grayscale-mode {
+  filter: grayscale(100%);
+}
+
+.high-contrast-mode {
+  filter: contrast(150%);
+}
+
+button,
+a,
+input[type="submit"],
+input[type="button"],
+label {
+  cursor: pointer;
+}
+
+@layer components {
+  .gov-container {
+    @apply max-w-[1240px] mx-auto px-4;
+  }
+
+  .btn-gov {
+    @apply px-6 py-2.5 bg-[#1E3A8A] text-white font-bold rounded text-sm hover:bg-[#1e40af] transition-all shadow-sm active:scale-95 uppercase tracking-wider disabled:opacity-50;
+  }
+
+  .gov-card {
+    @apply bg-white border border-gray-200 shadow-sm hover:border-[#1E3A8A]/30 transition-all duration-300 rounded-sm;
+  }
+
+  .gov-heading {
+    @apply text-2xl font-extrabold text-[#1E3A8A] mb-8 border-l-[6px] border-[#1E3A8A] pl-5 uppercase tracking-tight;
+  }
+
+  .gov-section {
+    @apply py-16 bg-white border-b border-gray-100;
+  }
+
+  .gov-page-header {
+    @apply pt-[160px] pb-12 bg-gray-50 border-b border-gray-200;
+  }
+
+  .gov-input {
+    @apply w-full border border-gray-300 rounded px-4 py-3 text-sm focus:ring-1 focus:ring-[#1E3A8A] focus:border-[#1E3A8A] outline-none transition-all placeholder:text-gray-400 font-medium bg-white;
+  }
+}
+
+/* Official Gov.uz patterns */
+.top-utility-bar {
+  @apply bg-gray-100 text-gray-500 text-[11px] py-2 border-b border-gray-200 font-bold;
+}
+
+.header-main {
+  @apply bg-white py-3 shadow-md relative z-50;
+}

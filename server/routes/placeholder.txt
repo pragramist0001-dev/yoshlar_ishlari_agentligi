@@ -1,0 +1,2 @@
+// Registering all other routes in their respective files would be consistent.
+// I'll create documentRoutes.js, projectRoutes.js, applicationRoutes.js
